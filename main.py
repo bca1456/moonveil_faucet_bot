@@ -5,12 +5,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 import random
+import zipfile
 
 # File paths
 evm_file = "evm_addresses.txt"  # File containing EVM addresses
 proxy_file = "proxies.txt"  # Proxy file in format host:port:login:password
 webdriver_path = "C:\\Webdrivers\\chromedriver.exe"  # Path to your WebDriver executable
-switchyomega_crx = "C:\Extensions\SwitchyOmega_Chromium_2_5_19.crx"  # Path to the Proxy SwitchyOmega .crx file
 
 # Load data from files
 def load_file(file_path):
@@ -19,8 +19,6 @@ def load_file(file_path):
 
 evm_addresses = load_file(evm_file)
 proxies = load_file(proxy_file)
-
-import zipfile
 
 def create_proxy_auth_extension(proxy_host, proxy_port, proxy_user, proxy_pass):
     manifest_json = """

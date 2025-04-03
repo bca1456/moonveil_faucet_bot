@@ -150,7 +150,7 @@ def faucet_interact(evm_addresses, proxies):
                 print("Unknown notification type.")
 
             # Log the notification text to a file
-            with open("notifications.log", "a") as log_file:
+            with open("notifications.log", "w") as log_file:
                 log_file.write(f"Address: {evm_address} | Notification: {notification_text}\n")
 
             # Remove the used address and proxy
